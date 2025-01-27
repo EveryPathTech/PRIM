@@ -1,0 +1,62 @@
+@import '@fontsource/lexend/300.css';
+@import '@fontsource/lexend/400.css';
+@import '@fontsource/lexend/500.css';
+@import '@fontsource/lexend/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Lexend', sans-serif;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600;
+}
+
+.nav-link {
+  @apply text-gray-300 hover:text-white transition-colors duration-200;
+}
+
+.primary-button {
+  @apply bg-[#38bdf8] hover:bg-[#0ea5e9] text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 transform hover:scale-105;
+}
+
+.benefit-card {
+  @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200;
+}
+
+.faq-item {
+  @apply border-b border-gray-200 py-4;
+}
+
+.timeline-connector {
+  @apply absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-[#38bdf8];
+}
+
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 1rem)); }
+}
+
+@keyframes infinite-scroll-reverse {
+  from { transform: translateX(calc(-100% - 1rem)); }
+  to { transform: translateX(0); }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 40s linear infinite;
+}
+
+.animate-infinite-scroll-reverse {
+  animation: infinite-scroll-reverse 40s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .animate-infinite-scroll,
+  .animate-infinite-scroll-reverse {
+    animation-duration: 30s;
+  }
+}
